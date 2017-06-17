@@ -3,10 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailPage } from '../item-detail/item-detail';
 
-import { Item } from '../../models/item';
-
-import { Items } from '../../providers/providers';
-
+import { Language } from '../../models/language';
+import { Languages } from '../../providers/providers';
 
 @Component({
   selector: 'page-search',
@@ -14,30 +12,32 @@ import { Items } from '../../providers/providers';
 })
 export class SearchPage {
   
-  currentItems: any = [];
+  currentLanguages: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public languages: Languages) { }
 
   /**
    * Perform a service for the proper items.
    */
-  getItems(ev) {
+  getLanguages(ev) {
     let val = ev.target.value;
     if (!val || !val.trim()) {
-      this.currentItems = [];
+      this.currentLanguages = [];
       return;
     }
-    this.currentItems = this.items.query({
-      name: val
+    this.currentLanguages = this.languages.query({
+      name: val,
+      native: val,
+      sample: val
     });
   }
 
   /**
    * Navigate to the detail page for this item.
    */
-  openItem(item: Item) {
+  openLanguage(language: Language) {
     this.navCtrl.push(ItemDetailPage, {
-      item: item
+      language: language
     });
   }
 

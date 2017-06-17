@@ -1,22 +1,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+    <ion-title>Search Languages</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+  <ion-searchbar (ionInput)="getLanguages($event)" placeholder="Type here to search"></ion-searchbar>
   <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+    <button ion-item (click)="openLanguage(language)" *ngFor="let language of currentLanguages">
       <ion-avatar item-start>
-        <img [src]="item.profilePic" />
+        <img style [src]="language.icon" class="lang-code" [style.background-color]="language.iconBg" />
       </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.about}}</p>
-      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+      <h2>{{language.name}} ({{language.nativeName}})</h2>
+      <p>{{language.sample}}</p>
     </button>
   </ion-list>
 </ion-content>

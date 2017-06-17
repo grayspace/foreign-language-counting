@@ -22,7 +22,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 
 import { Api } from '../providers/api';
-import { Items } from '../mocks/providers/items';
+import { Languages } from '../mocks/providers/languages';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 
@@ -90,7 +90,7 @@ export function entryComponents() {
 export function providers() {
   return [
     Api,
-    Items,
+    Languages,
     User,
     Camera,
     GoogleMaps,

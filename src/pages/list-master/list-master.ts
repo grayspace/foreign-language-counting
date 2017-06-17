@@ -4,19 +4,19 @@ import { NavController, ModalController } from 'ionic-angular';
 import { ItemCreatePage } from '../item-create/item-create';
 import { ItemDetailPage } from '../item-detail/item-detail';
 
-import { Items } from '../../providers/providers';
+import { Languages } from '../../providers/providers';
 
-import { Item } from '../../models/item';
+import { Language } from '../../models/language';
 
 @Component({
   selector: 'page-list-master',
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Item[];
+  currentLanguages: Language[];
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+  constructor(public navCtrl: NavController, public languages: Languages, public modalCtrl: ModalController) {
+    this.currentLanguages = this.languages.query();
   }
 
   /**
@@ -26,32 +26,11 @@ export class ListMasterPage {
   }
 
   /**
-   * Prompt the user to add a new item. This shows our ItemCreatePage in a
-   * modal and then adds the new item to our data source if the user created one.
-   */
-  addItem() {
-    let addModal = this.modalCtrl.create(ItemCreatePage);
-    addModal.onDidDismiss(item => {
-      if (item) {
-        this.items.add(item);
-      }
-    })
-    addModal.present();
-  }
-
-  /**
-   * Delete an item from the list of items.
-   */
-  deleteItem(item) {
-    this.items.delete(item);
-  }
-
-  /**
    * Navigate to the detail page for this item.
    */
-  openItem(item: Item) {
+  openLanguage(language: Language) {
     this.navCtrl.push(ItemDetailPage, {
-      item: item
+      language: language
     });
   }
 }
