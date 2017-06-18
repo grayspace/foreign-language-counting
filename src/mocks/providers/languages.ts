@@ -209,7 +209,7 @@ export class Languages {
         "sample": "Um, Dois, Três, Quatro, Cinco...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Um", "char": "1" },
-          { "num": "2", "eng": "Two", "native": "dois", "char": "2" },
+          { "num": "2", "eng": "Two", "native": "Dois", "char": "2" },
           { "num": "3", "eng": "Three", "native": "Três", "char": "3" },
           { "num": "4", "eng": "Four", "native": "Quatro", "char": "4" },
           { "num": "5", "eng": "Five", "native": "Cinco", "char": "5" },
