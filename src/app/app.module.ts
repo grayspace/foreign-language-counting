@@ -6,28 +6,28 @@ import { Storage, IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 
-import { CardsPage } from '../pages/cards/cards';
-import { ContentPage } from '../pages/content/content';
-import { ItemCreatePage } from '../pages/item-create/item-create';
+//import { CardsPage } from '../pages/cards/cards';
+//import { ContentPage } from '../pages/content/content';
+//import { ItemCreatePage } from '../pages/item-create/item-create';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { ListMasterPage } from '../pages/list-master/list-master';
-import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
-import { MenuPage } from '../pages/menu/menu';
+//import { LoginPage } from '../pages/login/login';
+//import { MapPage } from '../pages/map/map';
+//import { MenuPage } from '../pages/menu/menu';
 import { SearchPage } from '../pages/search/search';
-import { SettingsPage } from '../pages/settings/settings';
-import { SignupPage } from '../pages/signup/signup';
+////import { SettingsPage } from '../pages/settings/settings';
+//import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
-import { WelcomePage } from '../pages/welcome/welcome';
+//import { TutorialPage } from '../pages/tutorial/tutorial';
+//import { WelcomePage } from '../pages/welcome/welcome';
 
 import { Api } from '../providers/api';
 import { Languages } from '../mocks/providers/languages';
 import { Settings } from '../providers/settings';
-import { User } from '../providers/user';
+//import { User } from '../providers/user';
 
-import { Camera } from '@ionic-native/camera';
-import { GoogleMaps } from '@ionic-native/google-maps';
+//import { Camera } from '@ionic-native/camera';
+//import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -63,20 +63,20 @@ export function provideSettings(storage: Storage) {
  */
 let pages = [
   MyApp,
-  CardsPage,
-  ContentPage,
-  ItemCreatePage,
+  //CardsPage,
+  //ContentPage,
+  //ItemCreatePage,
   ItemDetailPage,
   ListMasterPage,
-  LoginPage,
-  MapPage,
-  MenuPage,
+  //LoginPage,
+  //MapPage,
+  //MenuPage,
   SearchPage,
-  SettingsPage,
-  SignupPage,
+  //SettingsPage,
+  //SignupPage,
   TabsPage,
-  TutorialPage,
-  WelcomePage
+  //TutorialPage,
+  //WelcomePage
 ];
 
 export function declarations() {
@@ -91,9 +91,9 @@ export function providers() {
   return [
     Api,
     Languages,
-    User,
-    Camera,
-    GoogleMaps,
+    //User,
+    //Camera,
+    //GoogleMaps,
     SplashScreen,
     StatusBar,
 
