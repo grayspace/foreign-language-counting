@@ -1,5 +1,8 @@
 {
   "name": "CountTo100",
   "app_id": "b77879ba",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

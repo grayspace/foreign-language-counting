@@ -12,6 +12,7 @@ export class Languages {
     "nativeName": "Español",
     "icon": "assets/img/spanish.png",
     "iconBg": "#173B7C",
+    "isFav": false,
     "sample": "Uno, dos, tres...",
     "numbers": [
       { "num": "1", "eng": "One", "native": "Uno", "char": "1" },
@@ -35,6 +36,7 @@ export class Languages {
         "nativeName": "Español",
         "icon": "assets/img/spanish.png",
         "iconBg": "#173B7C",
+        "isFav": false,
         "sample": "Uno, dos, tres, cuatro, cinco...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Uno", "char": "1" },
@@ -54,6 +56,7 @@ export class Languages {
         "nativeName": "日本語",
         "icon": "assets/img/japanese.png",
         "iconBg": "#197C17",
+        "isFav": false,
         "sample": "Ichi, ni, san, yon, go...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Ichi", "char": "一" },
@@ -73,6 +76,7 @@ export class Languages {
         "nativeName": "Deutsch",
         "icon": "assets/img/german.png",
         "iconBg": "#E9E648",
+        "isFav": false,
         "sample": "Eins, zwei, drei, vier, fünf...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Eins", "char": "1" },
@@ -92,6 +96,7 @@ export class Languages {
         "nativeName": "Français",
         "icon": "assets/img/french.png",
         "iconBg": "#E9743E",
+        "isFav": false,
         "sample": "Un, deux, trois, quatre, cinq...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Un", "char": "1" },
@@ -111,6 +116,7 @@ export class Languages {
         "nativeName": "中文",
         "icon": "assets/img/chinese.png",
         "iconBg": "#E84A46",
+        "isFav": false,
         "sample": "Yi, er, san, si, wu...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Yī", "char": "一" },
@@ -130,6 +136,7 @@ export class Languages {
         "nativeName": "Nederlands",
         "icon": "assets/img/dutch.png",
         "iconBg": "#2887CB",
+        "isFav": false,
         "sample": "Een, twee, drie, vier, vijf...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Een", "char": "1" },
@@ -149,6 +156,7 @@ export class Languages {
         "nativeName": "Русский",
         "icon": "assets/img/russian.png",
         "iconBg": "#C8B65B",
+        "isFav": false,
         "sample": "Ah-deen, dvah, tree, che-ti-ryeh, pyat'...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Adin", "char": "один" },
@@ -168,6 +176,7 @@ export class Languages {
         "nativeName": "हिन्दी",
         "icon": "assets/img/hindi.png",
         "iconBg": "#FDBA01",
+        "isFav": false,
         "sample": "Ek, do, teen, chaar, paanch...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Ek", "char": "१" },
@@ -187,6 +196,7 @@ export class Languages {
         "nativeName": "العَرَبِيَّة",
         "icon": "assets/img/arabic.png",
         "iconBg": "#D16447",
+        "isFav": false,
         "sample": "Wahed, Ethnein, Thalatha, Arba-a, Khamsa...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Wahed", "char": "واحد" },
@@ -206,6 +216,7 @@ export class Languages {
         "nativeName": "Português",
         "icon": "assets/img/portuguese.png",
         "iconBg": "#173B7C",
+        "isFav": false,
         "sample": "Um, Dois, Três, Quatro, Cinco...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Um", "char": "1" },
@@ -225,6 +236,7 @@ export class Languages {
         "nativeName": "Italiano",
         "icon": "assets/img/italian.png",
         "iconBg": "#E9743E",
+        "isFav": false,
         "sample": "Uno, Due, Tre, Quattro, Cinque...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Uno", "char": "1" },
@@ -244,6 +256,7 @@ export class Languages {
         "nativeName": "Bangla",
         "icon": "assets/img/bengali.png",
         "iconBg": "#C8B65B",
+        "isFav": false,
         "sample": "Ek, Dui, Tin, Chā, Pāṅch...",
         "numbers": [
           { "num": "1", "eng": "One", "native": "Ek", "char": "১" },
@@ -256,6 +269,46 @@ export class Languages {
           { "num": "8", "eng": "Eight", "native": "āṭh", "char": "৮" },
           { "num": "9", "eng": "Nine", "native": "Nɔẏ", "char": "৯" },
           { "num": "10", "eng": "Ten", "native": "Dɔś", "char": "১০" }
+        ]
+      },
+      {
+        "name": "Latin",
+        "nativeName": "Latīna",
+        "icon": "assets/img/latin.png",
+        "iconBg": "#FFE000",
+        "isFav": false,
+        "sample": "Ūnus, Duo, Trēs, Quattuor, Quīnque...",
+        "numbers": [
+          { "num": "1", "eng": "One", "native": "Ūnus", "char": "I" },
+          { "num": "2", "eng": "Two", "native": "Duo", "char": "II" },
+          { "num": "3", "eng": "Three", "native": "Trēs", "char": "III" },
+          { "num": "4", "eng": "Four", "native": "Quattuor", "char": "IV" },
+          { "num": "5", "eng": "Five", "native": "Quīnque", "char": "V" },
+          { "num": "6", "eng": "Six", "native": "Sex", "char": "VI" },
+          { "num": "7", "eng": "Seven", "native": "Septem", "char": "VII" },
+          { "num": "8", "eng": "Eight", "native": "Octō", "char": "VIII" },
+          { "num": "9", "eng": "Nine", "native": "Novem", "char": "IX" },
+          { "num": "10", "eng": "Ten", "native": "Decem", "char": "X" }
+        ]
+      },
+      {
+        "name": "Greek",
+        "nativeName": "ελληνικά",
+        "icon": "assets/img/greek.png",
+        "iconBg": "#197C17",
+        "isFav": false,
+        "sample": "Ena, Dio, Tria, Tessera, Pente...",
+        "numbers": [
+          { "num": "1", "eng": "One", "native": "Ene", "char": "1" },
+          { "num": "2", "eng": "Two", "native": "Dio", "char": "2" },
+          { "num": "3", "eng": "Three", "native": "Tria", "char": "3" },
+          { "num": "4", "eng": "Four", "native": "Tessera", "char": "4" },
+          { "num": "5", "eng": "Five", "native": "Pente", "char": "5" },
+          { "num": "6", "eng": "Six", "native": "Exi", "char": "6" },
+          { "num": "7", "eng": "Seven", "native": "Efta", "char": "7" },
+          { "num": "8", "eng": "Eight", "native": "Octo", "char": "8" },
+          { "num": "9", "eng": "Nine", "native": "Ennea", "char": "9" },
+          { "num": "10", "eng": "Ten", "native": "Deka", "char": "10" }
         ]
       }
     ];

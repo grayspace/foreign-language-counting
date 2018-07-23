@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides, ToastController } from 'ionic-angular';
-
+import { Storage } from '@ionic/storage';
 import { Languages } from '../../providers/providers';
 
 @Component({
@@ -11,19 +11,30 @@ export class ItemDetailPage {
   language: any;
   @ViewChild(Slides) slides: Slides
 
-  constructor(public navCtrl: NavController, navParams: NavParams, languages: Languages, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, navParams: NavParams, languages: Languages, public toastCtrl: ToastController, private storage: Storage) {
     this.language = navParams.get('language') || languages.defaultLanguage;
     this.toast = toastCtrl;
   }
 
-  //private direction = 1; // 0 is down, 1 is up
-  private startNum = 0;
   private speed = 5;
-  private isCounting = false;
   private isPlaying = false;
-  private currentSlide = 0;
   private muteActive = false;
   private toast: any;
+
+//TODO: Get favorites button to update when language is made a fav
+
+  toggleFavorite(languageName) {
+    this.storage.ready().then(() => {
+      var allLangs = [];
+      var lang;
+      this.storage.get('allLanguages').then((val) => {
+        allLangs = val;
+        lang = allLangs.filter(x => x.name === languageName);
+        lang[0].isFav = lang[0].isFav ? false : true;
+        this.storage.set("allLanguages", allLangs);
+      });
+    });
+  }
 
   showToast(messageStr: string) {
     let toast = this.toastCtrl.create({
@@ -33,13 +44,7 @@ export class ItemDetailPage {
     toast.present(toast);
   }
 
-  startCounting(startNum) {
-    this.isCounting = true;
-    this.startNum = startNum;
-  }
-
   stopCounting() {
-    this.isCounting = false;
     this.stopPlaying();
   }
 
@@ -47,8 +52,6 @@ export class ItemDetailPage {
     if (this.isPlaying) {
       this.setSpeed();
     }
-    /*    this.currentSlide = this.slides.getActiveIndex();
-    this.slides.slideTo(this.startNum);*/
   }
 
   slideDragged() {

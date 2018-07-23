@@ -1,20 +1,14 @@
 <ion-header>
-
   <ion-navbar>
-<!--    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>-->
-        <ion-title>Select Language</ion-title>
-
-<!--    <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>-->
+    <ion-title>{{this.favsShowing ? "Select Favorite" : "Select Language"}}</ion-title>
+    <ion-buttons end>
+      <div (click)="showFavs()">
+        <ion-icon class="favorite-button" name="star" [style.color]="this.numFavs > 0 ? '#488AFF' : '#aaa'"></ion-icon>
+      </div>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
 <ion-content>
-
   <ion-list>
     <ion-card *ngFor="let language of currentLanguages">
       <button ion-item (click)="openLanguage(language)">

@@ -1,46 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title><b>{{language.name}}</b> ({{language.nativeName}})</ion-title>
+    <ion-buttons end>
+      <div (click)="toggleFavorite(language.name)">
+        <ion-icon class="favorite-button" name="star" [style.color]="language.isFav == true ? '#488AFF' : '#aaa'"></ion-icon>
+      </div>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  <div class="item-detail" *ngIf="isCounting == true">
-    <p><b>Direction</b>
-      <!--<ion-badge>{{direction == 1 ? "Up": "Down"}}</ion-badge>-->
-    </p>
-
-    <ion-range [(ngModel)]="direction" min="0" max="1">
-      <ion-icon range-left name="arrow-down"></ion-icon>
-      <ion-icon range-right name="arrow-up"></ion-icon>
-    </ion-range>
-
-    <!-- PRO FEATURE:
-     <p><b>Starting Number</b> <ion-badge>{{startNum}}</ion-badge></p>
-    
-    <ion-range [(ngModel)]="startNum" min="0" max="100" step="10">
-      <ion-icon range-left><span class="start-num-label">0</span></ion-icon>
-      <ion-icon range-right><span class="start-num-label">100</span></ion-icon>
-    </ion-range>-->
-
-    <p><b>Speed</b>
-      <!--<ion-badge>{{speed}}</ion-badge>-->
-    </p>
-    <ion-range id="speedRange" [(ngModel)]="speed" min="1" max="10" step="1" pin="true">
-      <ion-icon range-left><span class="start-num-label">SLOW</span></ion-icon>
-      <ion-icon range-right><span class="start-num-label">FAST</span></ion-icon>
-    </ion-range>
-
-    <button class="start-button" ion-button large color="secondary" (click)="stopCounting()">Back</button>
-    <!--    <div class="favorite-div">
-      <ion-item no-lines>
-        <ion-label>Favorite</ion-label>
-        <ion-checkbox color="dark" checked="false"></ion-checkbox>
-      </ion-item>
-    </div>-->
-  </div>
-
-  <div class="counting-slides" *ngIf="isCounting == false">
+  <div class="counting-slides">
     <span class="slide-instructions">Swipe through slides or autoplay</span>
     <ion-slides (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideDragged()" loop="true">
       <ion-slide *ngFor="let number of language.numbers">
@@ -57,10 +26,9 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-    <button class="play-button" ion-button color="secondary" (click)="startPlaying(speed)" *ngIf="isPlaying == false && isCounting == false"><ion-icon name="play"></ion-icon></button>
-    <button class="stop-button" ion-button color="secondary" (click)="stopPlaying()" *ngIf="isPlaying == true && isCounting == false"><ion-icon name="square"></ion-icon></button>
+    <button class="play-button" ion-button color="secondary" (click)="startPlaying(speed)" *ngIf="isPlaying == false"><ion-icon name="play"></ion-icon></button>
+    <button class="stop-button" ion-button color="secondary" (click)="stopPlaying()" *ngIf="isPlaying == true"><ion-icon name="square"></ion-icon></button>
     <button class="mute-button" ion-button color="secondary" (click)="muteAudio()"><ion-icon name="volume-down"></ion-icon></button>
-    <!--    <button class="start-button" ion-button large color="secondary" (click)="startCounting(startNum)"><ion-icon name="cog"></ion-icon></button>-->
     <ion-range id="speedRange" [(ngModel)]="speed" min="1" max="10" step="1" pin="false">
       <ion-icon range-left><span class="start-num-label">SLOW</span></ion-icon>
       <ion-icon range-right><span class="start-num-label">FAST</span></ion-icon>
